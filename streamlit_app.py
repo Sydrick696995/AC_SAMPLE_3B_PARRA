@@ -194,11 +194,20 @@ elif choice == "Hashing":
 elif choice == "Algorithm Info":
     st.subheader("Cryptographic Algorithms Info")
     st.markdown("""
-    - **AES**: Symmetric encryption standard (block size: 128 bits).
-    - **DES**: Older symmetric encryption standard (56-bit key).
-    - **3DES**: Enhanced DES with triple encryption.
-    - **RSA**: Asymmetric encryption used for secure communication.
-    - **DSA**: Asymmetric algorithm for digital signatures.
-    - **Diffie-Hellman**: Key exchange method.
-    - **MD5/SHA1/SHA256/BLAKE2**: Common hashing algorithms.
+    ### 🔐 Symmetric Algorithms
+    - **AES (Advanced Encryption Standard)**: A widely used symmetric encryption algorithm operating on 128-bit blocks with key sizes of 128, 192, or 256 bits. Known for its speed and security, AES is the current standard for modern encryption.
+    - **DES (Data Encryption Standard)**: An older symmetric encryption algorithm using a 56-bit key and 64-bit blocks. Although historically significant, it's now considered insecure and largely deprecated.
+    - **3DES (Triple DES)**: Applies DES three times using two or three different keys, offering better security than DES. Though more secure, it's slower and being replaced by AES.
+
+    ### 🔑 Asymmetric Algorithms
+    - **RSA (Rivest–Shamir–Adleman)**: Uses a pair of public/private keys for encryption and decryption. It’s widely used for secure communications, digital certificates, and encryption protocols.
+    - **DSA (Digital Signature Algorithm)**: A public-key algorithm used for digital signatures. It ensures the authenticity and integrity of data, often used in software distribution and electronic documents.
+    - **Diffie-Hellman**: A method for secure key exchange that allows two parties to generate a shared secret over an insecure channel. It's foundational in many cryptographic systems.
+
+    ### 🧩 Hashing Algorithms
+    - **MD5 (Message Digest 5)**: Produces a 128-bit hash. Fast but insecure due to vulnerability to collisions; suitable only for basic checks.
+    - **SHA-1 (Secure Hash Algorithm 1)**: Outputs a 160-bit hash. No longer recommended due to cryptographic weaknesses.
+    - **SHA-256**: A secure member of the SHA-2 family, producing a 256-bit hash. Widely used in modern applications like blockchain and password protection.
+    - **BLAKE2**: A fast and secure hashing algorithm, designed to be faster than MD5 and SHA, with strong cryptographic guarantees. Great for file integrity and password hashing.
     """)
+
