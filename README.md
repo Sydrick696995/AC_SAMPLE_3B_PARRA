@@ -1,19 +1,53 @@
-# 🎈 Blank app template
+# 🔐 Applied Cryptography Application
 
-A simple Streamlit app template for you to modify!
+**Course:** BSCS 3B 
+**Date:** [Submission Date]  
+**Group Members:**  
+- Julie Mae Bermudo
+- Sydrick Parra
+- Vladimir Ivan Pili
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+---
 
-### How to run it on your own machine
+## 📌 Introduction
+This project showcases the practical use of cryptography in securing digital communication. It demonstrates how different cryptographic techniques protect data confidentiality, integrity, and authenticity through text and file encryption/decryption, and hashing.
 
-1. Install the requirements
+---
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+## 🎯 Project Objectives
+- To implement a range of symmetric, asymmetric, and hashing algorithms.
+- To create a simple UI-based application using Streamlit.
+- To educate users on the history, use cases, and working of each cryptographic method.
 
-2. Run the app
+---
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+## 🏗️ Application Architecture
+The application is built using Streamlit, providing a clean and interactive interface. Users can switch between encryption, decryption, and hashing modes, upload files, or input text directly.
+
+---
+
+## 🔐 Implemented Algorithms
+
+### 🔸 AES
+- **Type:** Symmetric
+- **History:** Standardized in 2001 by NIST.
+- **Use Cases:** Secure messaging, data storage.
+
+### 🔸 RSA
+- **Type:** Asymmetric
+- **History:** Introduced in 1977 by Rivest, Shamir, and Adleman.
+- **Use Cases:** Digital signatures, secure key exchange.
+
+### 🔸 SHA-256
+- **Type:** Hash Function
+- **History:** Part of the SHA-2 family, published by NIST in 2001.
+- **Use Cases:** Password hashing, data integrity.
+
+*(Repeat for all algorithms.)*
+
+---
+
+## 🚀 Deployment
+The application can be run locally using:
+```bash
+streamlit run app.py
