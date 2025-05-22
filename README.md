@@ -51,3 +51,10 @@ The application is built using Streamlit, providing a clean and interactive inte
 The application can be run locally using:
 ```bash
 streamlit run app.py
+
+## 🚀 Install
+The application need to install the following:
+```bash
+streamlit
+- pip install pycryptodome
+- pip install cryptography

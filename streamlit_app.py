@@ -146,6 +146,7 @@ if choice == "Home":
     ### Welcome
     This app demonstrates the use of **cryptographic algorithms** to secure text and files. 
     Navigate through the sidebar to try encryption, decryption, and hashing operations.
+    Created by Sydrick Parra, Vladimir Ivan, and Julie Mae Bermudo.
     """)
 
 elif choice == "Symmetric Encryption":
