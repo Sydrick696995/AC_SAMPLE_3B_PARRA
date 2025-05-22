@@ -67,18 +67,42 @@ def triple_des_decrypt(enc_data, key):
     return unpad(cipher.decrypt(ct))
 
 # RSA
-rsa_key = RSA.generate(2048)
-public_key = rsa_key.publickey()
-private_key = rsa_key
+# Paths for storing key files
+PRIVATE_KEY_FILE = "rsa_private.pem"
+PUBLIC_KEY_FILE = "rsa_public.pem"
 
-rsa_cipher = PKCS1_OAEP.new(public_key)
-rsa_decipher = PKCS1_OAEP.new(private_key)
+# Load or generate RSA keys
+def load_or_generate_rsa_keys():
+    if os.path.exists(PRIVATE_KEY_FILE) and os.path.exists(PUBLIC_KEY_FILE):
+        with open(PRIVATE_KEY_FILE, "rb") as priv_file:
+            private_key = RSA.import_key(priv_file.read())
+        with open(PUBLIC_KEY_FILE, "rb") as pub_file:
+            public_key = RSA.import_key(pub_file.read())
+    else:
+        key = RSA.generate(2048)
+        private_key = key
+        public_key = key.publickey()
+        # Save to files
+        with open(PRIVATE_KEY_FILE, "wb") as priv_file:
+            priv_file.write(private_key.export_key())
+        with open(PUBLIC_KEY_FILE, "wb") as pub_file:
+            pub_file.write(public_key.export_key())
+    return private_key, public_key
 
+# Load RSA keys
+rsa_private_key, rsa_public_key = load_or_generate_rsa_keys()
+rsa_cipher = PKCS1_OAEP.new(rsa_public_key)
+rsa_decipher = PKCS1_OAEP.new(rsa_private_key)
+
+# Encryption
 def rsa_encrypt(data):
-    return base64.b64encode(rsa_cipher.encrypt(data)).decode()
+    encrypted = rsa_cipher.encrypt(data)
+    return base64.b64encode(encrypted).decode()
 
+# Decryption
 def rsa_decrypt(enc_data):
-    return rsa_decipher.decrypt(base64.b64decode(enc_data))
+    decrypted = rsa_decipher.decrypt(base64.b64decode(enc_data))
+    return decrypted
 
 # DSA (Signature only)
 dsa_key = DSA.generate(2048)
