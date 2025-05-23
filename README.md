@@ -52,9 +52,18 @@ The application can be run locally using:
 ```bash
 streamlit run app.py
 
-## 🚀 Install
+--- 
+
+## 🚀 Need to install
 The application need to install the following:
 ```bash
 streamlit
 - pip install pycryptodome
 - pip install cryptography
+
+---
+
+## 🔴 WHERE TO WATCH
+Our video presentation can be watch at youtube. Below is the link
+```bash
+https://youtu.be/BCmf_KMMJ4g?si=ZKgCdSMnkm5e5dGU
